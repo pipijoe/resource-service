@@ -1,0 +1,23 @@
+server:
+  port: 9091
+
+spring:
+  application:
+    name: resource-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        username: nacos
+        password: nacos
+    gateway:
+      discovery:
+        locator:
+          enabled: true # gateway ??? nacos ?????
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+token_check_url: http://localhost:9090/oauth2/oauth/check_token
+
